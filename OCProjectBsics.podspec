@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OCProjectBsics'
-  s.version          = '0.0.1'
+  s.version          = '0.0.9'
   s.summary          = 'A short description of OCProjectBsics.'
   s.homepage         = 'https://github.com/AsTao/OCProjectBsics'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -18,17 +18,19 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
-  s.source_files = 'OCProjectBsics/Classes/**/*'
-  
+  s.source_files = 'OCProjectBsics/Common/*.{h,m}' , 'OCProjectBsics/Extension/*.{h,m}' , 'OCProjectBsics/Http/*.{h,m}', 'OCProjectBsics/Base/*.{h,m}','OCProjectBsics/*.{h,m}'
+  s.public_header_files = 'OCProjectBsics/Common/*.{h}' , 'OCProjectBsics/Extension/*.{h}', 'OCProjectBsics/Http/*.{h}', 'OCProjectBsics/Base/*.{h}', 'OCProjectBsics/*.{h}'
+  s.private_header_files = 'OCProjectBsics/Common.h'
   # s.resource_bundles = {
   #   'OCProjectBsics' => ['OCProjectBsics/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-   s.frameworks = 'UIKit'
+   s.frameworks = 'UIKit', 'Foundation'
    s.dependency 'SAMKeychain'
    s.dependency 'AFNetworking', '~> 3.0'
    s.dependency 'MJRefresh', '~> 3.1.10'
    s.dependency 'YYModel'
+   s.dependency 'DGActivityIndicatorView'
 
 end

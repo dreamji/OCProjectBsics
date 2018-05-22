@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OCProjectBsics'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'A short description of OCProjectBsics.'
   s.homepage         = 'https://github.com/AsTao/OCProjectBsics'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

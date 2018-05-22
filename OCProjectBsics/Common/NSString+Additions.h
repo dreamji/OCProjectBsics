@@ -8,6 +8,7 @@
 
 @import Foundation;
 @import CoreGraphics;
+@import UIKit;
 
 @interface NSString (Addtions)
 - (CGSize)sizeCalculate:(UIFont *)font width:(CGFloat )width;

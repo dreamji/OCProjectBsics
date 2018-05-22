@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "Common.h"
 #import "HttpPresenter.h"
+#import "BaseAppDelegate.h"
 
 @interface BaseViewController ()
 

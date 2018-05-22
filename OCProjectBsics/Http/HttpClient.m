@@ -13,6 +13,7 @@
 #import "Common.h"
 #import "AFNetworking.h"
 #import "YYModel.h"
+#import "BaseAppDelegate.h"
 
 @interface HttpClient()
 
@@ -31,6 +32,7 @@
 }
 
 - (void)post:(NSString *)url parameters:(NSDictionary<NSString *,id> *)parameters{
+    
     if (AppConfig.shared.reachabilityStatus == AFNetworkReachabilityStatusNotReachable) {
         if ([self.responseHandle respondsToSelector:@selector(didFail:errCode:errInfo:)]) {
             [self.responseHandle didFail:parameters errCode:-1 errInfo:@"Network is not reachable"];

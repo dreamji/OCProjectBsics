@@ -8,6 +8,7 @@
 
 #import "HttpToastView.h"
 #import "Common.h"
+#import "BaseAppDelegate.h"
 
 @interface HttpToastView()
 @property (nonatomic,strong) UILabel *titleLabel;

@@ -7,11 +7,15 @@
 //
 
 #import "OCAppDelegate.h"
+#import "OCProjectBsics.h"
 
 @implementation OCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    NSLog(@"%d",AppConfig.shared.reachabilityStatus);
+    
     // Override point for customization after application launch.
     return YES;
 }

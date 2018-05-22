@@ -15,17 +15,7 @@
 #import "UIImage+additions.h"
 #import "UITextField+Additions.h"
 #import "UIView+Additions.h"
-//#import "AppConfig.h"
-
-
 #import "CommonMacro.h"
-
-// #import "DGActivityIndicatorView.h"
-#import "BaseAppDelegate.h"
-//#import "SAMKeychain.h"
-//#import "AFNetworking.h"
-//#import "YYModel.h"
-#import "BaseViewController.h"
 
 
 #endif /* Extension_h */

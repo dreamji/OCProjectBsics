@@ -9,7 +9,7 @@
 #import "HttpStatusView.h"
 #import "DGActivityIndicatorView.h"
 #import "Common.h"
-
+#import "BaseAppDelegate.h"
 
 @interface HttpStatusView()
 @property(nonatomic,strong) UIImageView *logoImageView;

@@ -6,9 +6,10 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import CoreGraphics;
 
 @interface NSString (Addtions)
--(CGSize)sizeCalculate:(UIFont *)font width:(CGFloat )width;
+- (CGSize)sizeCalculate:(UIFont *)font width:(CGFloat )width;
 - (NSString *)md5;
 @end

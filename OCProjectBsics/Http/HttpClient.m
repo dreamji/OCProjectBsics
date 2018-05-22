@@ -11,6 +11,8 @@
 #import "HttpBaseModel.h"
 #import "HttpToastView.h"
 #import "Common.h"
+#import "AFNetworking.h"
+#import "YYModel.h"
 
 @interface HttpClient()
 

@@ -8,7 +8,8 @@
 
 #import "AppConfig.h"
 #import "Common.h"
-#import "AFNetworkReachabilityManager.h"
+#import "SAMKeychain.h"
+#import "AFNetworking.h"
 
 @interface AppConfig()
 @property(nonatomic,assign) AFNetworkReachabilityStatus netReachabilityStatus;
@@ -22,6 +23,7 @@
     static AppConfig * instance;
     dispatch_once(&predicate, ^{
         instance = [[AppConfig alloc] init];
+        
     });
     return instance;
 }
@@ -41,7 +43,7 @@
     return self;
 }
 
-- (AFNetworkReachabilityStatus)reachabilityStatus{
+- (NSInteger)reachabilityStatus{
     return _netReachabilityStatus;
 }
 

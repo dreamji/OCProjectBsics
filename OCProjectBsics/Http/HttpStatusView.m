@@ -7,9 +7,8 @@
 //
 
 #import "HttpStatusView.h"
+#import "DGActivityIndicatorView.h"
 #import "Common.h"
-
-
 
 
 @interface HttpStatusView()

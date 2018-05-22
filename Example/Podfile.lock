@@ -14,9 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - DGActivityIndicatorView (2.1.1)
   - MJRefresh (3.1.15.3)
-  - OCProjectBsics (0.0.1):
+  - OCProjectBsics (0.0.9):
     - AFNetworking (~> 3.0)
+    - DGActivityIndicatorView
     - MJRefresh (~> 3.1.10)
     - SAMKeychain
     - YYModel
@@ -32,8 +34,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  OCProjectBsics: 296927cd95170ef0ee201ab50a7ba223d5e905f2
+  OCProjectBsics: 203372da36ac0ae2eed0aee8a60f9c13611905f9
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 

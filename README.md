@@ -22,7 +22,7 @@ pod 'OCProjectBsics'
 
 ## Author
 
-ssTaoz, 236048180@qq.com
+tobias, 236048180@qq.com
 
 ## License
 

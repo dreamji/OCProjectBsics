@@ -6,7 +6,7 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface UIBarButtonItem(Additions)
 + (UIBarButtonItem *)titleLabel:(NSString *)text target:(id)target action:(SEL)action;

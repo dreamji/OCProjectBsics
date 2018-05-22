@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OCProjectBsics'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of OCProjectBsics.'
   s.homepage         = 'https://github.com/AsTao/OCProjectBsics'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-   s.frameworks = 'UIKit', 'Foundation'
+   s.frameworks = 'UIKit', 'Foundation' , 'CoreGraphics'
    s.dependency 'SAMKeychain'
    s.dependency 'AFNetworking', '~> 3.0'
    s.dependency 'MJRefresh', '~> 3.1.10'

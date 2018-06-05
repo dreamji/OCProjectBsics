@@ -9,7 +9,7 @@
 #import "UIView+Additions.h"
 
 IB_DESIGNABLE
-@implementation UIView (Addtions)
+@implementation UIView (OCProjectBsics_Addtions)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (CGFloat)left {

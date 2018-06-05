@@ -10,7 +10,7 @@
 @import CoreGraphics;
 @import UIKit;
 
-@interface NSString (Addtions)
+@interface NSString (OCProjectBsics_Addtions)
 - (CGSize)sizeCalculate:(UIFont *)font width:(CGFloat )width;
 - (NSString *)md5;
 @end

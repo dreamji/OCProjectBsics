@@ -8,7 +8,7 @@
 
 #import "UITextField+Additions.h"
 
-@implementation UITextField (Addtions)
+@implementation UITextField (OCProjectBsics_Addtions)
 
 - (void)placeholderLabelColor:(UIColor *)color{
     [self setValue:color forKeyPath:@"_placeholderLabel.textColor"];

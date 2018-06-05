@@ -7,9 +7,6 @@
 //
 
 #import "BasePresenter.h"
-#import "HttpClient.h"
-#import "HttpToastView.h"
-#import "HttpStatusView.h"
 
 
 
@@ -17,8 +14,8 @@ typedef enum : NSUInteger {
     Post,
 } HTTPMethod;
 
-
-@interface HttpPresenter : BasePresenter <HttpResponseHandle>
+@class HttpClient,HttpToastView,HttpStatusView;
+@interface HttpPresenter : BasePresenter
 @property (nonatomic,weak,readonly) HttpStatusView *statusView;
 @property (nonatomic,strong,readonly) HttpClient *httpClient;
 

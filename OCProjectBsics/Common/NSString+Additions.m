@@ -9,7 +9,7 @@
 #import "NSString+Additions.h"
 #import "CommonCrypto/CommonDigest.h"
 
-@implementation NSString (Addtions)
+@implementation NSString (OCProjectBsics_Addtions)
 -(CGSize)sizeCalculate:(UIFont *)font width:(CGFloat )width
 {
     CGSize stringSize = [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)

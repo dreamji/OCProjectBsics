@@ -6,9 +6,9 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface UIBarButtonItem(Additions)
+@interface UIBarButtonItem(OCProjectBsics_Addtions)
 + (UIBarButtonItem *)titleLabel:(NSString *)text target:(id)target action:(SEL)action;
 + (UIBarButtonItem *)titleLabel:(NSString *)text font:(UIFont *)font color:(UIColor *)color target:(id)target action:(SEL)action;
 @end

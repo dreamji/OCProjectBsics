@@ -6,11 +6,10 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "HttpPresenter.h"
+@import UIKit;
 
 
-
+@class HttpPresenter;
 @protocol BaseViewControllerProtocol<NSObject>
 - (id)createHttpPresenter;
 @end

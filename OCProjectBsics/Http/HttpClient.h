@@ -6,8 +6,7 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "HttpBaseModel.h"
+@import Foundation;
 
 
 @protocol HttpResponseHandle<NSObject>
@@ -17,7 +16,7 @@
 - (void)didFail:(id)response errCode:(NSInteger)errCode errInfo:(NSString *)errInfo;
 @end
 
-
+@class HttpBaseModel;
 @interface HttpClient : NSObject
 @property (nonatomic,strong) NSString *cuurentRequestUrl;
 @property (nonatomic,strong) NSDictionary *cuurentRequestParameters;

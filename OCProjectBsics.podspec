@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OCProjectBsics'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'A short description of OCProjectBsics.'
   s.homepage         = 'https://github.com/AsTao/OCProjectBsics'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
-  s.source_files = 'OCProjectBsics/Common/*.{h,m}' , 'OCProjectBsics/Extension/*.{h,m}' , 'OCProjectBsics/Http/*.{h,m}', 'OCProjectBsics/Base/*.{h,m}','OCProjectBsics/*.{h,m}'
+  s.source_files = 'OCProjectBsics/**/*.{h,m}'
   s.public_header_files = 'OCProjectBsics/Common/*.{h}' , 'OCProjectBsics/Extension/*.{h}', 'OCProjectBsics/Http/*.{h}', 'OCProjectBsics/Base/*.{h}', 'OCProjectBsics/*.{h}'
   s.private_header_files = 'OCProjectBsics/Common.h'
   # s.resource_bundles = {

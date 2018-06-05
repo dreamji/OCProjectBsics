@@ -8,7 +8,7 @@
 
 #import "UIImage+additions.h"
 
-@implementation UIImage(additions)
+@implementation UIImage(OCProjectBsics_Addtions)
 - (UIImage *)clipImageWithRect:(CGRect)rect{
     
     //将UIImage转换成CGImageRef

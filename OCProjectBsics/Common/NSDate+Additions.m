@@ -9,7 +9,7 @@
 #import "NSDate+Additions.h"
 #import "Common.h"
 
-@implementation NSDate(Additions)
+@implementation NSDate(OCProjectBsics_Addtions)
 - (NSString *)defaultDateFormat{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];

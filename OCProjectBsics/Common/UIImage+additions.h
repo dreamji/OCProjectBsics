@@ -6,8 +6,8 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface UIImage(additions) 
+@interface UIImage(OCProjectBsics_Addtions) 
 - (UIImage *)clipImageWithRect:(CGRect)rect;
 @end

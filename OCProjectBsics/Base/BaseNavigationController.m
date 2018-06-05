@@ -17,14 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationBar setTintColor:[UIColor whiteColor]];
-    
+    [self.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],
+                                                 NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
 }
 
 - (void)setNavigationBarImage:(UIImage *)navigationBarImage{
+    _navigationBarImage = navigationBarImage;
     NSInteger leftCapWidth = navigationBarImage.size.width * 0.5;
     NSInteger topCapHeight = navigationBarImage.size.height * 0.5;
-    UIImage *newImage = [_navigationBarImage stretchableImageWithLeftCapWidth:leftCapWidth topCapHeight:topCapHeight];
+    UIImage *newImage = [navigationBarImage stretchableImageWithLeftCapWidth:leftCapWidth topCapHeight:topCapHeight];
     [self.navigationBar setBackgroundImage:newImage forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
 }
 

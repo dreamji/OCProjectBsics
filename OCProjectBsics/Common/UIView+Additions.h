@@ -6,9 +6,9 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface UIView (Addtions)
+@interface UIView (OCProjectBsics_Addtions)
 /**
  * Shortcut for frame.origin.x.
  *

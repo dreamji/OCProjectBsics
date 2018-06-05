@@ -11,7 +11,7 @@
 #import "HttpClient.h"
 #import "HttpStatusView.h"
 
-@interface HttpPresenter()
+@interface HttpPresenter()<HttpResponseHandle>
 
 @property (nonatomic,strong) HttpStatusView *httpStatusView;
 @end

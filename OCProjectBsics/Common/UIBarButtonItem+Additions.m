@@ -9,7 +9,7 @@
 #import "UIBarButtonItem+Additions.h"
 #import "Common.h"
 
-@implementation UIBarButtonItem(Additions)
+@implementation UIBarButtonItem(OCProjectBsics_Addtions)
 
 + (UIBarButtonItem *)titleLabel:(NSString *)text target:(id)target action:(SEL)action{
     UIBarButtonItem *item = [UIBarButtonItem titleLabel:text font:[UIFont systemFontOfSize:14] color:[UIColor whiteColor] target:target action:action];

@@ -6,9 +6,9 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface UITextField (Addtions)
+@interface UITextField (OCProjectBsics_Addtions)
 - (void)placeholderLabelColor:(UIColor *)color;
 - (void)appendToolBar;
 - (void)textFieldLeftLabel:(NSString *)text labelWidth:(CGFloat)labelWidth;

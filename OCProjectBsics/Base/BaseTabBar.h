@@ -6,7 +6,7 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface BaseTabBar : UIView
 @property (nonatomic,strong) NSMutableArray<UIButton *> *items;

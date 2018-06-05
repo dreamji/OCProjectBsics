@@ -7,7 +7,7 @@
 //
 
 #import "NSDate+Additions.h"
-#import "OCProjectBsics.h"
+#import "CommonMacro.h"
 
 @implementation NSDate(OCProjectBsics_Addtions)
 - (NSString *)defaultDateFormat{

@@ -7,11 +7,11 @@
 //
 
 #import "HttpStatusView.h"
-#import "DGActivityIndicatorView.h"
 #import "BaseAppDelegate.h"
 #import "CommonMacro.h"
 #import "UIView+Additions.h"
 #import "NSString+Additions.h"
+@import DGActivityIndicatorView;
 
 @interface HttpStatusView()
 @property(nonatomic,strong) UIImageView *logoImageView;

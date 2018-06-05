@@ -8,9 +8,9 @@
 
 #import "AppConfig.h"
 #import "SAMKeychain.h"
-#import "AFNetworking.h"
 #import "CommonMacro.h"
 #import "AnySafeValue+Additions.h"
+@import AFNetworking;
 
 @interface AppConfig()
 @property(nonatomic,assign) AFNetworkReachabilityStatus netReachabilityStatus;

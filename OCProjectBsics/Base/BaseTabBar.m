@@ -7,7 +7,8 @@
 //
 
 #import "BaseTabBar.h"
-#import "OCProjectBsics.h"
+#import "UIView+Additions.h"
+#import "CommonMacro.h"
 
 @interface BaseTabBar()
 

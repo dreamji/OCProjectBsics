@@ -8,9 +8,9 @@
 
 #import "HttpTableView.h"
 #import "HttpClient.h"
-#import "MJRefresh.h"
 #import "HttpStatusView.h"
 #import "CommonMacro.h"
+@import MJRefresh;
 
 @interface HttpTableView()<HttpResponseHandle>
 @property (nonatomic,strong) MJRefreshNormalHeader *refreshHeader;

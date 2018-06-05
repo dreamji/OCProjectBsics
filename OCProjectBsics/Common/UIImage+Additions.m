@@ -6,7 +6,7 @@
 //  Copyright © 2018年 NorthStar. All rights reserved.
 //
 
-#import "UIImage+additions.h"
+#import "UIImage+Additions.h"
 
 @implementation UIImage(OCProjectBsics_Addtions)
 - (UIImage *)clipImageWithRect:(CGRect)rect{

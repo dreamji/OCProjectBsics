@@ -10,11 +10,14 @@
 #import "AppConfig.h"
 #import "HttpBaseModel.h"
 #import "HttpToastView.h"
-#import "AFNetworking.h"
-#import "YYModel.h"
 #import "BaseAppDelegate.h"
 #import "AnySafeValue+Additions.h"
 
+@import AFNetworking;
+@import YYModel;
+
+//#import "AFNetworking.h"
+//#import "YYModel.h"
 @interface HttpClient()
 
 @end

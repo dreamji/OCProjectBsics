@@ -7,7 +7,8 @@
 //
 
 #import "OCAppDelegate.h"
-#import "OCProjectBsics.h"
+//#import "OCProjectBsics.h"
+@import OCProjectBsics;
 
 @implementation OCAppDelegate
 

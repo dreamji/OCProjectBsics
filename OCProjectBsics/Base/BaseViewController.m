@@ -7,9 +7,12 @@
 //
 
 #import "BaseViewController.h"
-#import "Common.h"
 #import "HttpPresenter.h"
 #import "BaseAppDelegate.h"
+#import "AnySafeValue+Additions.h"
+#import "NSString+Additions.h"
+#import "CommonMacro.h"
+
 
 @interface BaseViewController ()
 

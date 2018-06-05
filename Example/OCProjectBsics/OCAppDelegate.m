@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    NSLog(@"%d",AppConfig.shared.reachabilityStatus);
+    NSLog(@"%ld",(long)AppConfig.shared.reachabilityStatus);
     
     // Override point for customization after application launch.
     return YES;

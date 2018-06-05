@@ -8,8 +8,10 @@
 
 #import "HttpStatusView.h"
 #import "DGActivityIndicatorView.h"
-#import "Common.h"
 #import "BaseAppDelegate.h"
+#import "CommonMacro.h"
+#import "UIView+Additions.h"
+#import "NSString+Additions.h"
 
 @interface HttpStatusView()
 @property(nonatomic,strong) UIImageView *logoImageView;
@@ -79,13 +81,13 @@
         {
             self.indicatorView.hidden = true;
             [self.indicatorView stopAnimating];
-            self.logoImageView.image = _IMG(@"public_fail_image");
+            self.logoImageView.image = [UIImage imageNamed:@"public_fail_image"];
         }break;
         case HttpStatusNoData:
         {
             self.indicatorView.hidden = true;
             [self.indicatorView stopAnimating];
-            self.logoImageView.image = _IMG(@"public_nodata_image");
+            self.logoImageView.image = [UIImage imageNamed:@"public_nodata_image"];
         }break;
         default:
             break;

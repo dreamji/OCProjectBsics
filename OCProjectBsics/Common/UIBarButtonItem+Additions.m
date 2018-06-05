@@ -7,7 +7,7 @@
 //
 
 #import "UIBarButtonItem+Additions.h"
-#import "Common.h"
+#import "NSString+Additions.h"
 
 @implementation UIBarButtonItem(OCProjectBsics_Addtions)
 

@@ -7,7 +7,7 @@
 //
 
 #import "BaseTabBar.h"
-#import "Common.h"
+#import "OCProjectBsics.h"
 
 @interface BaseTabBar()
 

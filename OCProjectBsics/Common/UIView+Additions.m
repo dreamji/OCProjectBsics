@@ -8,7 +8,7 @@
 
 #import "UIView+Additions.h"
 
-IB_DESIGNABLE
+
 @implementation UIView (OCProjectBsics_Addtions)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -118,28 +118,6 @@ IB_DESIGNABLE
     self.frame = frame;
 }
 
-
-- (void)setCornerRadius:(CGFloat)cornerRadius{
-    self.layer.cornerRadius  = cornerRadius;
-}
-
-- (void)setBorderColor:(UIColor *)borderColor{
-    self.layer.borderColor = borderColor.CGColor;
-}
-
-- (void)setBorderWidth:(CGFloat)borderWidth{
-    self.layer.borderWidth = borderWidth;
-}
-
-- (CGFloat)cornerRadius{
-    return 0;
-}
-- (UIColor *)borderColor{
-    return UIColor.whiteColor;
-}
-- (CGFloat)borderWidth{
-    return 0;
-}
 
 
 @end

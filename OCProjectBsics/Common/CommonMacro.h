@@ -16,6 +16,9 @@
 #define isSimulator false
 #endif
 
+
+
+
 #define isPad [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
 #define isPhone [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone
 #define systemVersion [[UIDevice currentDevice] systemVersion]

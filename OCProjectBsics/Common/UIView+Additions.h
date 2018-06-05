@@ -66,8 +66,5 @@
 @property (nonatomic) CGFloat centerY;
 
 
-@property (nonatomic, assign)IBInspectable CGFloat cornerRadius;
-@property (nonatomic, assign)IBInspectable CGFloat borderWidth;
-@property (nonatomic, weak)IBInspectable UIColor *borderColor;
 
 @end

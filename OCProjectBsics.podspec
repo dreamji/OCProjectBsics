@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
   s.requires_arc = true
+  s.resources = 'OCProjectBsics/OCResource.bundle'
   s.source_files = 'OCProjectBsics/**/*.{h,m}'
   s.public_header_files = 'OCProjectBsics/OCProjectBsics.h', 'OCProjectBsics/Base/*.h', 'OCProjectBsics/Common/*.h', 'OCProjectBsics/Http/*.h'
   # s.resource_bundles = {

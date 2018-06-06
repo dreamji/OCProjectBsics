@@ -9,18 +9,25 @@
 #import "HttpTableView.h"
 #import "HttpClient.h"
 #import "HttpStatusView.h"
+#import "UIImage+Additions.h"
 #import "CommonMacro.h"
+@import YYModel;
+
 @import MJRefresh;
 
-@interface HttpTableView()<HttpResponseHandle>
+@interface HttpTableView()<UITableViewDataSource>
 @property (nonatomic,strong) MJRefreshNormalHeader *refreshHeader;
 @property (nonatomic,strong) MJRefreshBackNormalFooter *loadMoreFooter;
 @property (nonatomic,strong) HttpClient *httpClient;
-@property (nonatomic,assign) NSInteger page;
-@property (nonatomic,assign) NSInteger pageSize;
 @property (nonatomic,strong) HttpStatusView *statusView;
 @property (nonatomic,strong) HttpEndingView *endingView;
+@property (nonatomic,strong) NSString *cellReuseIdentifier;
+
+
+
 @end
+
+
 
 @implementation HttpTableView
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
@@ -37,6 +44,11 @@
 }
 
 - (void)config{
+    
+    self.httpPageKey = @"currentPage";
+    self.httpPageSizeKey = @"pageSize";
+    self.ModelClass = NSDictionary.class;
+
     self.httpClient = [[HttpClient alloc] initWithHandel:self];
     self.refreshHeader = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshTableHeaderDidTriggerRefresh)];
     self.loadMoreFooter = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTableHeaderDidTriggerRefresh)];
@@ -51,8 +63,9 @@
     self.page = 0;
     self.pageSize = 20;
     self.dataItems = [NSMutableArray array];
-    
+    self.delegate = self;
 }
+
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor{
     [super setBackgroundColor:backgroundColor];
@@ -61,34 +74,30 @@
 }
 
 - (void)refreshTableHeaderDidTriggerRefresh{
-    [self.dataItems removeAllObjects];
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:_parameters];
     self.page = 0;
-    dic[@"currentPage"] = @(_page);
-    dic[@"pageSize"] = @(_pageSize);
+    dic[_httpPageKey] = @(_page);
+    dic[_httpPageSizeKey] = @(_pageSize);
     [self.httpClient post:_url parameters:dic];
     
 }
 
 - (void)loadMoreTableHeaderDidTriggerRefresh{
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:_parameters];
-    dic[@"currentPage"] = @(_page);
-    dic[@"pageSize"] = @(_pageSize);
+    dic[_httpPageKey] = @(_page);
+    dic[_httpPageSizeKey] = @(_pageSize);
     [self.httpClient post:_url parameters:dic];
 }
 
+
 - (void)didSuccess:(id)response{
+    if (self.page == 0) {
+        [self.dataItems removeAllObjects];
+    }
     self.page += 1;
-    if ([self.delegate respondsToSelector:@selector(tableView:requestSuccess:page:)]) {
-        const HttpTableView *strongSelf = self;
-        NSMethodSignature *sig = [[self.delegate class] instanceMethodSignatureForSelector:@selector(tableView:requestSuccess:page:)];
-        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:sig];
-        invocation.target = self.delegate;
-        invocation.selector = @selector(tableView:requestSuccess:page:);
-        [invocation setArgument:&strongSelf atIndex:2];
-        [invocation setArgument:&response atIndex:3];
-        [invocation setArgument:&_page atIndex:4];
-        [invocation invoke];
+    NSArray *array = [NSArray yy_modelArrayWithClass:_ModelClass json:response];
+    if (array) {
+        [self.dataItems addObjectsFromArray:array];
     }
     NSInteger dataCount = [self.dataSource tableView:self numberOfRowsInSection:0];
     if( dataCount == 0){
@@ -151,50 +160,44 @@
     }
     return _endingView;
 }
+
+#pragma mark - Delegate
+- (void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier{
+    [super registerNib:nib forCellReuseIdentifier:identifier];
+    self.cellReuseIdentifier = identifier;
+}
+- (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString *)identifier{
+    [super registerClass:cellClass forCellReuseIdentifier:identifier];
+    self.cellReuseIdentifier = identifier;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataItems.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:_cellReuseIdentifier forIndexPath:indexPath];
+    return cell;
+}
 @end
 
 @implementation HttpEndingView
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = _RGB(0xF5F5F5);
-//        [self addSubview:self.leftLine];
-//        [self addSubview:self.rightLine];
-//        [self addSubview:self.titleLabel];
+        [self addSubview:self.imageView];
     }
     return self;
 }
 
-//- (void)layoutSubviews{
-//    [super layoutSubviews];
-//    self.titleLabel.frame = CGRectMake(self.width/2-35, self.height/2-10, 70, 20);
-//    self.leftLine.frame = CGRectMake(15, self.height/2, _titleLabel.left - 20, 1);
-//    self.rightLine.frame = CGRectMake(_titleLabel.right + 5, self.height/2, self.leftLine.width, 1);
-//}
-//
-//- (UIView *)leftLine{
-//    if (_leftLine == nil) {
-//        _leftLine = [[UIView alloc] initWithFrame:CGRectZero];
-//        _leftLine.backgroundColor = _RGB(0xDCDCDC);
-//    }
-//    return _leftLine;
-//}
-//- (UIView *)rightLine{
-//    if (_rightLine == nil) {
-//        _rightLine = [[UIView alloc] initWithFrame:CGRectZero];
-//        _rightLine.backgroundColor = _RGB(0xDCDCDC);
-//    }
-//    return _rightLine;
-//}
-//- (UILabel *)titleLabel{
-//    if (_titleLabel == nil) {
-//        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-//        _titleLabel.font = [UIFont systemFontOfSize:11];
-//        _titleLabel.textColor = _RGB(0xB0B0B0);
-//        _titleLabel.textAlignment = NSTextAlignmentCenter;
-//        _titleLabel.text = @"我是有底线的";
-//    }
-//    return _titleLabel;
-//}
-
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.imageView.frame = CGRectMake((self.frame.size.width-105)/2, 30, 105, 24);
+    
+}
+- (UIImageView *)imageView{
+    if (_imageView == nil) {
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 105, 24)];
+        _imageView.image = [UIImage imageNamed:@"project_ending" bundle:@"OCResource"];
+    }
+    return _imageView;
+}
 @end

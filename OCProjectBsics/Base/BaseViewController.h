@@ -9,12 +9,13 @@
 @import UIKit;
 
 
-@class HttpPresenter;
 @protocol BaseViewControllerProtocol<NSObject>
-- (id)createHttpPresenter;
+@required
+- (void)createHttpPresenter:(id (^)(Class className))completion;
 @end
 
-@interface BaseViewController : UIViewController<BaseViewControllerProtocol>
+@class HttpPresenter;
+@interface BaseViewController : UIViewController
 @property (nonatomic,weak) NSString *navTitle;
 @property (nonatomic,weak) HttpPresenter *presenter;
 - (void)keyboardListener;

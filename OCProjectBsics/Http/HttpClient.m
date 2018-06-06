@@ -16,8 +16,7 @@
 @import AFNetworking;
 @import YYModel;
 
-//#import "AFNetworking.h"
-//#import "YYModel.h"
+
 @interface HttpClient()
 
 @end
@@ -29,7 +28,6 @@
     self = [super init];
     if (self) {
         _responseHandle = handel;
-        
     }
     return self;
 }
@@ -157,7 +155,6 @@
         }
     }];
     [downloadTask resume];
-    
 }
 
 @end

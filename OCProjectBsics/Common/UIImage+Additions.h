@@ -10,4 +10,5 @@
 
 @interface UIImage(OCProjectBsics_Addtions) 
 - (UIImage *)clipImageWithRect:(CGRect)rect;
++ (UIImage *)imageNamed:(NSString *)named bundle:(NSString *)bundle;
 @end

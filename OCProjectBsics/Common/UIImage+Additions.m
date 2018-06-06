@@ -26,5 +26,13 @@
 
 }
 
++ (UIImage *)imageNamed:(NSString *)named bundle:(NSString *)bundle{
+    NSString *path = [[NSBundle mainBundle] pathForResource:bundle ofType:@"bundle"];
+    NSBundle *resource = [NSBundle bundleWithPath:path];
+    NSString *postfix = [[UIScreen mainScreen] scale] > 2 ? @"@3x" : @"@2x";
+    NSString *file = [resource pathForResource:[NSString stringWithFormat:@"%@%@",named,postfix] ofType:@"png"];
+    return [UIImage imageWithContentsOfFile:file];
+}
+
 
 @end

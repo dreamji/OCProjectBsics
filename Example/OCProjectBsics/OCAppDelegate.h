@@ -7,10 +7,10 @@
 //
 
 @import UIKit;
+#import <OCProjectBsics/OCProjectBsics.h>
+
+@interface OCAppDelegate : BaseAppDelegate 
 
 
-@interface OCAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
 
 @end

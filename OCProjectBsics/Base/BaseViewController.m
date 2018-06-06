@@ -14,29 +14,34 @@
 #import "CommonMacro.h"
 
 
-@interface BaseViewController ()
+@interface BaseViewController ()<BaseViewControllerProtocol>
 
 @end
 
 @implementation BaseViewController
 
-- (id)createHttpPresenter{
-    return nil;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"";
-    self.presenter = [self createHttpPresenter];
+
     self.navigationController.interactivePopGestureRecognizer.enabled = true;
-    
     
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"";
-    //主要是以下两个图片设置
     self.navigationController.navigationBar.backIndicatorImage = [UIImage imageNamed:@"login_back_icon"];
     self.navigationController.navigationBar.backIndicatorTransitionMaskImage = [UIImage imageNamed:@"login_back_icon"];
     self.navigationItem.backBarButtonItem = backItem;
+    
+    if ([self respondsToSelector:@selector(createHttpPresenter:)]) {
+        [self createHttpPresenter:^id(__unsafe_unretained Class className) {
+            id p = [[className alloc] init];
+            self.presenter = p;
+            return p;
+        }];
+    }
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -87,5 +92,12 @@
     label.text = navTitle;
     self.navigationItem.titleView = label;
 }
+
+
+//- (void)createHttpPresenter:(Class)class completion:(void (^)(id presenter))completion{
+//    self.presenter = [[class alloc] init];
+//    completion(_presenter);
+//}
+
 
 @end

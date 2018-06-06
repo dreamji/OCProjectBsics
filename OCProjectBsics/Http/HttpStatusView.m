@@ -11,6 +11,7 @@
 #import "CommonMacro.h"
 #import "UIView+Additions.h"
 #import "NSString+Additions.h"
+#import "UIImage+Additions.h"
 @import DGActivityIndicatorView;
 
 @interface HttpStatusView()
@@ -81,13 +82,13 @@
         {
             self.indicatorView.hidden = true;
             [self.indicatorView stopAnimating];
-            self.logoImageView.image = [UIImage imageNamed:@"public_fail_image"];
+            self.logoImageView.image = [UIImage imageNamed:@"project_fail" bundle:@"OCResource"];
         }break;
         case HttpStatusNoData:
         {
             self.indicatorView.hidden = true;
             [self.indicatorView stopAnimating];
-            self.logoImageView.image = [UIImage imageNamed:@"public_nodata_image"];
+            self.logoImageView.image = [UIImage imageNamed:@"project_nodata" bundle:@"OCResource"];
         }break;
         default:
             break;

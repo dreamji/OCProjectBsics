@@ -15,7 +15,7 @@
 
 @import MJRefresh;
 
-@interface HttpTableView()<UITableViewDataSource>
+@interface HttpTableView()<UITableViewDataSource,HttpTableViewDataHandle>
 @property (nonatomic,strong) MJRefreshNormalHeader *refreshHeader;
 @property (nonatomic,strong) MJRefreshBackNormalFooter *loadMoreFooter;
 @property (nonatomic,strong) HttpClient *httpClient;
@@ -63,7 +63,7 @@
     self.page = 0;
     self.pageSize = 20;
     self.dataItems = [NSMutableArray array];
-    self.delegate = self;
+    self.dataSource = self;
 }
 
 
@@ -95,9 +95,13 @@
         [self.dataItems removeAllObjects];
     }
     self.page += 1;
-    NSArray *array = [NSArray yy_modelArrayWithClass:_ModelClass json:response];
-    if (array) {
-        [self.dataItems addObjectsFromArray:array];
+    if ([self.delegate respondsToSelector:@selector(tableView:requestSuccess:page:)]) {
+        [((id<HttpTableViewDataHandle>)self.delegate) tableView:self requestSuccess:response page:_page];
+    }else{
+        NSArray *array = [NSArray yy_modelArrayWithClass:_ModelClass json:response];
+        if (array) {
+            [self.dataItems addObjectsFromArray:array];
+        }
     }
     NSInteger dataCount = [self.dataSource tableView:self numberOfRowsInSection:0];
     if( dataCount == 0){

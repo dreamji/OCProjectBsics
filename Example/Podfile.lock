@@ -16,7 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - DGActivityIndicatorView (2.1.1)
   - MJRefresh (3.1.15.3)
-  - OCProjectBsics (0.1.0):
+  - OCProjectBsics (0.1.8):
     - AFNetworking (~> 3.0)
     - DGActivityIndicatorView
     - MJRefresh (~> 3.1.10)
@@ -36,7 +36,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  OCProjectBsics: 9f7b691a446950f57aaf553b280284f887d9dc0e
+  OCProjectBsics: 3e7542ad0c178f8f7fb406aa9c56f670a7ee6d1d
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B2F760820C780040082B0C6 /* OCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F760720C780040082B0C6 /* OCBaseViewController.m */; };
+		2B3E080820C8E17700B71184 /* OCTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E080620C8E17700B71184 /* OCTableViewViewController.m */; };
 		2B56814620C6920600EE28E9 /* OCTestPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B56814520C6920600EE28E9 /* OCTestPresenter.m */; };
 		3A4797743715E2EB1B1273C4 /* Pods_OCProjectBsics_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0554EFB9F643F46E30144B2 /* Pods_OCProjectBsics_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -27,6 +28,8 @@
 		216311B98E1C5AB047215BBC /* Pods-OCProjectBsics_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCProjectBsics_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCProjectBsics_Example/Pods-OCProjectBsics_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2B2F760620C780040082B0C6 /* OCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCBaseViewController.h; sourceTree = "<group>"; };
 		2B2F760720C780040082B0C6 /* OCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCBaseViewController.m; sourceTree = "<group>"; };
+		2B3E080620C8E17700B71184 /* OCTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTableViewViewController.m; sourceTree = "<group>"; };
+		2B3E080720C8E17700B71184 /* OCTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTableViewViewController.h; sourceTree = "<group>"; };
 		2B56814420C6920600EE28E9 /* OCTestPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTestPresenter.h; sourceTree = "<group>"; };
 		2B56814520C6920600EE28E9 /* OCTestPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTestPresenter.m; sourceTree = "<group>"; };
 		470821893C41F794EBA7A423 /* Pods-OCProjectBsics_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCProjectBsics_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCProjectBsics_Tests/Pods-OCProjectBsics_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				2B2F760720C780040082B0C6 /* OCBaseViewController.m */,
 				2B56814420C6920600EE28E9 /* OCTestPresenter.h */,
 				2B56814520C6920600EE28E9 /* OCTestPresenter.m */,
+				2B3E080720C8E17700B71184 /* OCTableViewViewController.h */,
+				2B3E080620C8E17700B71184 /* OCTableViewViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -302,6 +307,7 @@
 				6003F5A7195388D20070C39A /* OCViewController.m in Sources */,
 				2B56814620C6920600EE28E9 /* OCTestPresenter.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				2B3E080820C8E17700B71184 /* OCTableViewViewController.m in Sources */,
 				2B2F760820C780040082B0C6 /* OCBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

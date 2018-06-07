@@ -11,7 +11,7 @@
 
 @protocol BaseViewControllerProtocol<NSObject>
 @required
-- (void)createHttpPresenter:(id (^)(Class className))completion;
+- (void)createHttpPresenter:(id (^)(Class className))creation;
 @end
 
 @class HttpPresenter;

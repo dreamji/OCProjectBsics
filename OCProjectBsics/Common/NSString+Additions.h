@@ -13,4 +13,9 @@
 @interface NSString (OCProjectBsics_Addtions)
 - (CGSize)sizeCalculate:(UIFont *)font width:(CGFloat )width;
 - (NSString *)md5;
+///@"yyyy-MM-dd"
+- (NSString *)dateFormat:(NSString *)format;
+
+///@"yyyy-MM-dd HH:mm:ss"
+- (NSDate *)dateFromString:(NSString *)format;
 @end

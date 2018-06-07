@@ -8,6 +8,7 @@
 
 #import "NSString+Additions.h"
 #import "CommonCrypto/CommonDigest.h"
+#import "AnySafeValue+Additions.h"
 
 @implementation NSString (OCProjectBsics_Addtions)
 -(CGSize)sizeCalculate:(UIFont *)font width:(CGFloat )width
@@ -29,5 +30,18 @@
             result[8], result[9], result[10], result[11],
             result[12], result[13], result[14], result[15]
             ];
+}
+///@"yyyy-MM-dd"
+- (NSString *)dateFormat:(NSString *)format{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:format];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.safeDouble];
+    return [formatter stringFromDate:date];
+}
+
+- (NSDate *)dateFromString:(NSString *)format{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:format];
+    return [formatter dateFromString:self];
 }
 @end

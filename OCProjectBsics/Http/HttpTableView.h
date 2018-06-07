@@ -13,6 +13,7 @@
 @property (nonatomic,strong) NSDictionary *parameters;
 @property (nonatomic,strong) Class ModelClass;
 @property (nonatomic,strong) NSMutableArray *dataItems;
+@property (nonatomic,strong) NSString *cellReuseIdentifier;
 - (void)beginRefreshing;
 
 

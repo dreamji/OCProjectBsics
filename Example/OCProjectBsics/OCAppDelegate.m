@@ -15,7 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    NSLog(@"%ld",(long)AppConfig.shared.reachabilityStatus);
+    NSLog(@"%@",_DocumentsPath);
     
     // Override point for customization after application launch.
     return YES;

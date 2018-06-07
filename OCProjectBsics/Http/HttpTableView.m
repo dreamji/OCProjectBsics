@@ -21,9 +21,6 @@
 @property (nonatomic,strong) HttpClient *httpClient;
 @property (nonatomic,strong) HttpStatusView *statusView;
 @property (nonatomic,strong) HttpEndingView *endingView;
-@property (nonatomic,strong) NSString *cellReuseIdentifier;
-
-
 
 @end
 
